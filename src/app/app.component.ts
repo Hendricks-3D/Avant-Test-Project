@@ -23,10 +23,14 @@ constructor(private httpUtil:HttpUtilitiesService){
   /*let addressObj = new Array({
       'Addresses':[this.address.city,this.address.state,this.address.radius]
     });*/
+   // this.httpUtil.getCities(this.address.city);
+
+
+   //formatting the API input
     let  jsonString = JSON.parse(`{"Addresses": ["${this.address.city}","${this.address.state}","${this.address.radius}"]}`);
     console.log(jsonString);
 
-     this.jsonData =  this.httpUtil.getCarriers(jsonString);
+     this.jsonData =  this.httpUtil.getCarriers(jsonString); 
      console.log(this.jsonData);
   }
   
